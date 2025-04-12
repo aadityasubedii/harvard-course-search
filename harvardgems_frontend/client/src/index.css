@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --harvard-crimson: 353 100% 25%;
+    --harvard-crimson-light: 353 100% 30%;
+    --harvard-black: 0 0% 10%;
+    --harvard-gray: 220 10% 90%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-gray-50 text-foreground;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Pro', Georgia, 'Times New Roman', Times, serif;
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl mb-6;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl mb-4;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl mb-3;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@layer components {
+  .harvard-header {
+    @apply bg-white border-b border-gray-200 shadow-sm;
+  }
+  
+  .harvard-logo {
+    @apply flex items-center py-2.5 px-4 bg-primary text-white rounded-md shadow-sm;
+  }
+  
+  .harvard-btn {
+    @apply bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors shadow-sm;
+  }
+
+  .harvard-card {
+    @apply bg-white text-card-foreground rounded-lg border border-gray-200 p-4 shadow-sm;
+  }
+
+  .harvard-input {
+    @apply rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30;
+  }
+  
+  .filter-section {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm p-4 mb-4;
+  }
+  
+  /* Higher specificity for section headings is needed */
+  .filter-section .filter-heading {
+    @apply text-gray-700 font-medium text-sm mb-3 border-b border-gray-100 pb-2;
+  }
+  
+  /* Add accent variant with red background */
+  .filter-section-accent {
+    @apply bg-primary/5 border border-primary/20 rounded-lg shadow-sm p-4 mb-4;
+  }
+}
